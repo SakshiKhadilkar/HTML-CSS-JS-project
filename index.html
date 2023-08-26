@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+
+</head>
+
+<style>
+    body {
+        background-image: url('7195183.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-attachment: fixed;
+        box-sizing: border-box;
+        margin: 0;
+        /* Reset default margin */
+    }
+
+    body::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(8, 45, 60, 0.7);
+    }
+
+    nav {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(2px);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        color: white;
+        position: relative;
+        z-index: 2;
+    }
+
+    .logocontainer {
+
+        margin-left: 10px;
+    }
+
+    .logocontainer img {
+        width: 30px;
+        height: 30px;
+        flex-basis: 50%;
+        box-shadow: 0 0 100px rgba(8, 45, 60, 1);
+        margin-top: 5px;
+        margin-left: 20px;
+    }
+
+    .logocontainer p {
+        margin: 0px;
+        font-family: monospace;
+        font-weight: bold;
+    }
+
+    .editor {
+        flex-basis: 20%;
+    }
+
+    .editor button {
+        color: black;
+        font-weight: bold;
+        padding: 5%;
+        border-radius: 20px;
+        border-style: none;
+        animation: glowing 1300ms infinite;
+        background-color: rgba(15, 217, 244, 0.882);
+
+    }
+
+    .editor button:hover {
+
+        border: 2px solid rgba(8, 45, 60, 1);
+    }
+
+    @keyframes glowing {
+
+        0% {
+            background-color:  rgba(137, 233, 241, 0.882);
+            box-shadow: 0 0 10px rgba(137, 233, 241, 0.882);
+        }
+
+        50% {
+            background-color: rgba(15, 217, 244, 0.882);
+            box-shadow:  0 0 10px rgba(15, 217, 244, 0.882);
+        }
+
+        100% {
+            background-color: rgba(137, 233, 241, 0.882);
+            box-shadow: 0 0 10px rgba(137, 233, 241, 0.882);
+        }
+    }
+
+
+    .middle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: calc(100vh - 200px);
+        /* Adjust the value as needed */
+        padding: 0 20px;
+        color: white;
+        position: relative;
+        /* Adjust text color */
+        margin-top: 30px;
+    }
+
+    .middlepart {
+        text-align: center;
+        flex-basis: 50%;
+        font-size: 50px;
+        margin-left: 30px;
+    }
+
+    .middlepart h1 {
+        font-family: Copperplate, "Copperplate Gothic Light", fantasy;
+        font-size: 100px;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: 700;
+        line-height: 26.4px;
+    }
+
+    .middlepart p {
+        font-size: 30px;
+        margin-top: 8%;
+    }
+
+    .textpart {
+        margin-left: 10%;
+        font-size: 20px;
+        flex-basis: 50%;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        margin-top: 20px;
+        margin-right: 50px;
+        line-height: 1.8;
+    }
+
+    .white {
+
+        background-color: antiquewhite;
+    }
+
+
+    .second {
+
+        margin-top: 8%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 0px;
+
+    }
+
+    .second .leftside {
+
+        flex-basis: 50%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-top: 8%;
+        margin-left: 5%;
+    }
+
+    .leftside img {
+        margin-left: 3%;
+    }
+
+    .second .rightside {
+
+        flex-basis: 60%;
+        margin-top: 8%;
+        font-size: 20px;
+    }
+
+    .third {
+
+        display: flex;
+        flex-direction: row;
+        margin-top: 50px;
+        padding: 30px;
+        margin-top: 3%;
+        align-items: center;
+    }
+
+    .thirdright {
+
+        display: flex;
+        flex-direction: row;
+        padding: 20px;
+        align-items: center;
+    }
+
+    .thirdleft {
+
+        font-size: 20px;
+        padding: 20px;
+    }
+
+    .footer {
+
+        margin-top: 2%;
+        background-color: rgb(3, 27, 36);
+    }
+
+    .footertitle {
+
+        font-size: 50px;
+        color: antiquewhite;
+        padding: 5%;
+    }
+
+    .connect {
+
+        background: url(Ud0YO2.jpg);
+        background-size: contain;
+        filter: blur(2px);
+        position: center;
+        margin-left: 35%;
+        padding: 10%;
+        max-width: 400px;
+        border-radius: 10px;
+        position: relative;
+    }
+
+
+    .formelements {
+        
+        position: absolute;
+        margin-left: 38%;
+        margin-top: -13%;
+    }
+
+    .connectbutton {
+        margin-top: 5%;
+        background-color: rgba(8, 45, 60, 0.8);
+        padding: 3%;
+        color: white;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        border-radius: 10%;
+        border-style: none;
+    }
+
+    .connectbutton:hover {
+
+        font-size: 18px;
+    }
+
+    .grid {
+
+        display: flex;
+        flex-direction: column;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 5%;
+        gap: 5%;
+    }
+
+</style>
+
+<script>
+
+    function openeditor() {
+        
+        var url = "editor.html";
+
+        window.open(url,"_blank");
+
+    }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            
+            const connectButton = document.querySelector(".connectbutton");
+            const emailInput = document.getElementById("floatingInputValue");
+
+            
+            const registeredEmails = [];
+
+            
+            connectButton.addEventListener("click", function (event) {
+                event.preventDefault(); 
+                const enteredEmail = emailInput.value;
+
+                
+                if (registeredEmails.includes(enteredEmail)) {
+                    alert("Email already registered: " + enteredEmail);
+                } else {
+                    
+                    registeredEmails.push(enteredEmail);
+
+                    
+                    alert("Successfully registered with email: " + enteredEmail);
+
+                    
+                    emailInput.value = "test@example.com";
+                }
+            });
+        });
+   
+
+</script>
+
+<body>
+
+    <nav>
+        <div class="logocontainer">
+            <img src="aperture.png" width="100px" height="100px" margin="0px" padding="0px">
+            <p>Imageoverse</p>
+        </div>
+        <div class="editor">
+            <button onclick="openeditor()">Way to Editor</button>
+        </div>
+    </nav>
+
+    <div class="middle">
+        <div class="middlepart">
+            <div class="title">
+                <h1>Imageoverse</h1>
+                <p>Transforming Pixels, Crafting Magic</p>
+            </div>
+        </div>
+        <div class="textpart">Welcome to Imageoverse Your Ultimate Destination for editing your memories. Discover the
+            power of transformation through the art of photo editing. With a keen eye for detail and a touch of
+            creativity, we take your ordinary photos and turn them into extraordinary visual narratives. </div>
+    </div>
+
+    <div class="white">
+
+        <div class="second">
+
+            <div class="leftside">
+                <img src="img3.jpg" height="200px" width="200px">
+                <img src="icons8-arrow-64.png">
+                <img src="img2.jpg" height="200px" width="200px">
+            </div>
+
+            <div class="rightside">
+                <h1>RetroMagic</h1>
+                <p>"Rediscover Timeless Charm: Elevate Your Photos with Our Retro Editing Tools!"</p>
+            </div>
+        </div>
+
+        <div class="third">
+
+            <div class="thirdleft">
+                <h1>Saturate to Captivate</h1>
+                <p>Elevate your photos with our powerful saturation feature. Enhance the intensity and depth of colors
+                    in your images, making them pop with vibrancy and life. </p>
+            </div>
+            <div class="thirdright">
+                <img src="Screenshot 2023-08-23 200347.png" height="200px" width="400px">
+                <img src="icons8-left-arrow-64.png" height="100px" width="100px">
+                <img src="image.jpg" height="200px" width="400px">
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer">
+
+        <div class="footertitle">Get Connected With Us !</div>
+
+        <div class="connect"></div>
+
+        <div class="formelements">
+            <form class="form-floating">
+                <input type="email" class="form-control" id="floatingInputValue" placeholder="name@example.com"
+                    value="test@example.com" style="width:300px">
+                <label for="floatingInputValue">Input with value</label>
+            </form>
+            <button class="connectbutton">Connect</button>
+        </div>
+        <div class="grid">
+            <img src="icons8-linkedin-94.png" width="110px" height="110px">
+            <img src="icons8-facebook-64.png" width="100px" height="100px">
+        </div>
+
+    </div>
+
+</body>
+
+</html>
